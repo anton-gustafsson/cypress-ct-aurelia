@@ -30,3 +30,4 @@ jobs:
                   component: true
                   project: ./example-app
                   browser: chrome
+                  headed: true
