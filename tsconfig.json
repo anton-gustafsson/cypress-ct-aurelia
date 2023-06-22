@@ -9,5 +9,5 @@
     "strict": true,
     "types": ["cypress"]
   },
-  "include": ["index.tsx"]
+  "include": ["index.ts"]
 }
