@@ -22,9 +22,6 @@ jobs:
             - name: Build
               run: npm run build
 
-            - name: Run Example Project Cypress Tests
-              working-directory: './example-app'
-              run: npm i
             - name: Cypress run
               uses: cypress-io/github-action@v5
               with:
