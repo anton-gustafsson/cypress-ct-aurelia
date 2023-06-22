@@ -16,7 +16,9 @@ const cssRules = [
     }
 ];
 
-module.exports = params => ({
+const production = true;
+
+module.exports = ({} = {}) => ({
     resolve: {
         extensions: ['.ts', '.js'],
         modules: [srcDir, 'node_modules'],
@@ -28,12 +30,12 @@ module.exports = params => ({
     entry: {
         app: ['aurelia-bootstrapper']
     },
-    mode: params?.production ? 'production' : 'development',
+    mode: production ? 'production' : 'development',
     output: {
         path: outDir,
         publicPath: baseUrl,
-        filename: params?.production ? '[name].[chunkhash].bundle.js' : '[name].[fullhash].bundle.js',
-        chunkFilename: params?.production ? '[name].[chunkhash].chunk.js' : '[name].[fullhash].chunk.js'
+        filename: production ? '[name].[chunkhash].bundle.js' : '[name].[fullhash].bundle.js',
+        chunkFilename: production ? '[name].[chunkhash].chunk.js' : '[name].[fullhash].chunk.js'
     },
     optimization: {
         runtimeChunk: true,
@@ -79,7 +81,7 @@ module.exports = params => ({
         port: 8080,
         host: 'localhost'
     },
-    devtool: params?.production ? undefined : 'cheap-module-source-map',
+    devtool: production ? undefined : 'cheap-module-source-map',
     module: {
         rules: [
             {
@@ -110,11 +112,11 @@ module.exports = params => ({
             }
         }),
         new MiniCssExtractPlugin({
-            filename: params?.production ? '[name].[contenthash].bundle.css' : '[name].[fullhash].bundle.css',
-            chunkFilename: params?.production ? '[name].[contenthash].chunk.css' : '[name].[fullhash].chunk.css'
+            filename: production ? '[name].[contenthash].bundle.css' : '[name].[fullhash].bundle.css',
+            chunkFilename: production ? '[name].[contenthash].chunk.css' : '[name].[fullhash].chunk.css'
         }),
         new webpack.DefinePlugin({
-            PRODUCTION: params?.production ?? false
+            PRODUCTION: production ?? false
         })
     ]
 });
