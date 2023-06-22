@@ -21,6 +21,11 @@ jobs:
 
             - name: Build
               run: npm run build
+            - name: Install packages deps for example app
+              run: cd example-app && npm i
 
-            - name: Run Example Project Cypress Tests
-              run: npm t
+            - name: Cypress run
+              uses: cypress-io/github-action@v5
+              with:
+                  component: true
+                  project: ./example-app
