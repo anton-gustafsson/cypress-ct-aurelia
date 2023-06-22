@@ -1,5 +1,5 @@
 import { defineConfig } from 'cypress';
-import webpackConfig from './webpack.config.js';
+import webpackConfig from '../example-app/webpack.config';
 
 export default defineConfig({
     video: false,
