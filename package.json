@@ -7,7 +7,6 @@
         "default": "./index.js"
     },
     "scripts": {
-        "test": "cd example-app && npm i && npx cypress run --component",
         "build": "npm run build:definition && npm run build:mount",
         "build:mount": "tsc --project tsconfig.json",
         "build:definition": "tsc --project tsconfig.definition.json"

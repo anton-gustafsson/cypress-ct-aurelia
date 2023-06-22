@@ -23,4 +23,4 @@ jobs:
               run: npm run build
 
             - name: Run Example Project Cypress Tests
-              run: npm t
+              run: cd example-app && npm i && npx cypress run --component
