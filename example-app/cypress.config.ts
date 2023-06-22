@@ -1,4 +1,5 @@
 import { defineConfig } from 'cypress';
+import webpackConfig from './webpack.config.js';
 
 export default defineConfig({
     video: false,
@@ -14,7 +15,8 @@ export default defineConfig({
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             framework: 'cypress-ct-aurelia',
-            bundler: 'webpack'
+            bundler: 'webpack',
+            webpackConfig
         }
     }
 });
