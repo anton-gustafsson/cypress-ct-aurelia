@@ -1,6 +1,6 @@
 import { bindable } from 'aurelia-framework';
 
-export class FullName{
+export class FullName {
     @bindable firstName: string;
     @bindable lastName: string;
 

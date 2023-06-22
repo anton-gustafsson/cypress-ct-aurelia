@@ -1,33 +1,21 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "module": "esnext",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "target": "ES6",
-    "lib": [
-      "ES7",
-      "dom"
-    ],
-    "moduleResolution": "node",
-    "baseUrl": "src",
-    "resolveJsonModule": true,
-    "importHelpers": true,
-    "allowJs": true,
-  },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "cypress",
-  ],
-  "atom": {
-    "rewriteTsconfig": false
-  }
+    "compileOnSave": false,
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "module": "esnext",
+        "typeRoots": ["./node_modules/@types"],
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "target": "ES6",
+        "lib": ["ES7", "dom"],
+        "moduleResolution": "node",
+        "baseUrl": "src",
+        "resolveJsonModule": true,
+        "importHelpers": true,
+        "allowJs": true
+    },
+    "include": ["src"],
+    "exclude": ["cypress"]
 }

@@ -6,6 +6,6 @@ See [the documentation](https://docs.cypress.io/guides/component-testing/third-p
 
 Once you've written your definition:
 
-- `npm run build` to build it
-- update `name` in `package.json`
-- publish!
+-   `npm run build` to build it
+-   update `name` in `package.json`
+-   publish!
