@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const webpack = require('webpack');
 
@@ -17,7 +16,7 @@ const cssRules = [
     }
 ];
 
-module.exports = ({ production } = {}) => ({
+module.exports = params => ({
     resolve: {
         extensions: ['.ts', '.js'],
         modules: [srcDir, 'node_modules'],
@@ -29,12 +28,12 @@ module.exports = ({ production } = {}) => ({
     entry: {
         app: ['aurelia-bootstrapper']
     },
-    mode: production ? 'production' : 'development',
+    mode: params?.production ? 'production' : 'development',
     output: {
         path: outDir,
         publicPath: baseUrl,
-        filename: production ? '[name].[chunkhash].bundle.js' : '[name].[fullhash].bundle.js',
-        chunkFilename: production ? '[name].[chunkhash].chunk.js' : '[name].[fullhash].chunk.js'
+        filename: params?.production ? '[name].[chunkhash].bundle.js' : '[name].[fullhash].bundle.js',
+        chunkFilename: params?.production ? '[name].[chunkhash].chunk.js' : '[name].[fullhash].chunk.js'
     },
     optimization: {
         runtimeChunk: true,
@@ -80,7 +79,7 @@ module.exports = ({ production } = {}) => ({
         port: 8080,
         host: 'localhost'
     },
-    devtool: production ? undefined : 'cheap-module-source-map',
+    devtool: params?.production ? undefined : 'cheap-module-source-map',
     module: {
         rules: [
             {
@@ -111,11 +110,11 @@ module.exports = ({ production } = {}) => ({
             }
         }),
         new MiniCssExtractPlugin({
-            filename: production ? '[name].[contenthash].bundle.css' : '[name].[fullhash].bundle.css',
-            chunkFilename: production ? '[name].[contenthash].chunk.css' : '[name].[fullhash].chunk.css'
+            filename: params?.production ? '[name].[contenthash].bundle.css' : '[name].[fullhash].bundle.css',
+            chunkFilename: params?.production ? '[name].[contenthash].chunk.css' : '[name].[fullhash].chunk.css'
         }),
         new webpack.DefinePlugin({
-            PRODUCTION: production ?? false
+            PRODUCTION: params?.production ?? false
         })
     ]
 });
