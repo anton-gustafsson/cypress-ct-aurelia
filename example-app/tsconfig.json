@@ -3,7 +3,7 @@
     "compilerOptions": {
         "esModuleInterop": true,
         "module": "esnext",
-        "typeRoots": ["./node_modules/@types"],
+        "typeRoots": ["./node_modules/@types", "./src/typings.d.ts"],
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
