@@ -9,3 +9,5 @@ Once you've written your definition:
 -   `npm run build` to build it
 -   update `name` in `package.json`
 -   publish!
+
+TODO:
