@@ -16,6 +16,6 @@
         "importHelpers": true,
         "allowJs": true
     },
-    "include": ["src"],
+    "include": ["src", "webpack.config.js"],
     "exclude": ["cypress"]
 }
