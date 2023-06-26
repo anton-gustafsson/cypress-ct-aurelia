@@ -21,4 +21,4 @@ jobs:
             - name: Build
               run: npm run build
             - name: Install packages deps for example app
-              run: cd example-app && npm i && ./node_modules/.bin/cypress run --component
+              run: cd example-app && npm i && ./node_modules/.bin/cypress run --browser chrome --headless
